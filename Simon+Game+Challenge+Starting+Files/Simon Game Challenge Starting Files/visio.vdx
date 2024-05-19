@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Component Diagram">
+    <mxGraphModel dx="1284" dy="1250" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="2" value="User Component" style="shape=swimlane;fillColor=#D5E8D4;strokeColor=#82B366;swimlaneFillColor=#FFFFFF;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="160" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="User Management" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2">
+          <mxGeometry x="10" y="30" width="140" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Project Component" style="shape=swimlane;fillColor=#FFF2CC;strokeColor=#DAA520;swimlaneFillColor=#FFFFFF;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="160" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="5" value="Project Management" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="4">
+          <mxGeometry x="10" y="30" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="6" value="Task Management" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="4">
+          <mxGeometry x="10" y="90" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="7" value="Task Component" style="shape=swimlane;fillColor=#E1D5E7;strokeColor=#9673A6;swimlaneFillColor=#FFFFFF;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="20" width="160" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="8" value="Task Properties" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="7">
+          <mxGeometry x="10" y="30" width="140" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="Notion Integration Component" style="shape=swimlane;fillColor=#F8CECC;strokeColor=#B85450;swimlaneFillColor=#FFFFFF;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="20" width="180" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="10" value="Notion Sync" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="9">
+          <mxGeometry x="10" y="30" width="160" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4" target="7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2" target="9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

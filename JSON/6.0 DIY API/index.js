@@ -47,12 +47,60 @@ app.post("/jokes", (req, res) => {
 });
 
 //5. PUT a joke
+app.put("/jokes/:id", (req, res) => {
+  const joke = jokes.find((joke) => joke.id === parseInt(req.params.id));
+  if (joke) {
+    joke.jokeText = req.body.jokeText;
+    joke.jokeType = req.body.jokeType;
+    res.send(joke);
+  } else {
+    res.status(404).send("Joke not found.");
+  }
+});
 
 //6. PATCH a joke
 
+app.patch("/jokes/:id", (req, res) => {
+  const joke = jokes.find((joke) => joke.id === parseInt(req.params.id));
+  if (joke) {
+    if (req.body.jokeText) {
+      joke.jokeText = req.body.jokeText;
+    }
+    if (req.body.jokeType) {
+      joke.jokeType = req.body.jokeType;
+    }
+    res.send(joke);
+  } else {
+    res.status(404).send("Joke not found.");
+  }
+
+});
+
+
 //7. DELETE Specific joke
+app.delete("/jokes/:id", (req, res) => {
+  const joke = jokes.find((joke) => joke.id === parseInt(req.params.id));
+  if (joke) {
+    jokes = jokes.filter((joke) => joke.id !== parseInt(req.params.id)); 
+    res.json({ message: "Joke deleted successfully."})
+      .status(200)
+  } else {
+    res.status(404).send("Joke not found.");
+  }
+});
 
 //8. DELETE All jokes
+app.delete("/jokis/all", (req, res) => {
+  if (req.query.key !== masterKey) {
+    return res.status(401).send("Unauthorized");
+  } else{
+    jokes = [];
+    res.json({ message: "All jokes deleted successfully."})
+    .status(200)
+  }
+  
+});
+
 
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);

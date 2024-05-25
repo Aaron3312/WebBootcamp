@@ -23,10 +23,28 @@ app.get("/jokes/:id", (req, res) => {
   }
 });
 
-
 //3. GET a jokes by filtering on the joke type
+app.get("/filter", (req, res) => {
+  const jokeType = req.query.type;
+  const filteredJokes = jokes.filter((joke) => joke.jokeType === jokeType);
+  if (filteredJokes.length > 0) {
+    res.send(filteredJokes);
+  } else {
+    res.status(404).send("No jokes founded.");
+  }
+});
+
 
 //4. POST a new joke
+app.post("/jokes", (req, res) => {
+  const newJoke = {
+    id: jokes.length + 1,
+    jokeText: req.body.jokeText,
+    jokeType: req.body.jokeType,
+  };
+  jokes.push(newJoke);
+  res.send(newJoke);
+});
 
 //5. PUT a joke
 
